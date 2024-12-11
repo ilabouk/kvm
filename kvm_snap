@@ -3,3 +3,23 @@ virsh snapshot-create-as \
     --diskspec vda,file=/var/lib/libvirt/images/ubuntu/ubuntu.qcow2,snapshot=external \
     --memspec file=/var/lib/libvirt/images,snapshot=external \
     --atomic
+
+
+apt update && apt -y install qemu-guest-agent
+
+systemctl enable qemu-guest-agent
+systemctl start qemu-guest-agent
+
+The command to create VM from exising qcow2 image is as below:
+
+# virt-install
+
+     --name demo
+
+     --ram 512
+
+     --disk image_directory.qcow2
+
+     --import
+
+virsh undefine --nvram "name of VM"
