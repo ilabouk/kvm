@@ -1,0 +1,5 @@
+virsh snapshot-create-as \
+    --domain <domain> <snapshot_name> \
+    --diskspec vda,file=/var/lib/libvirt/images/ubuntu/ubuntu.qcow2,snapshot=external \
+    --memspec file=/var/lib/libvirt/images,snapshot=external \
+    --atomic
