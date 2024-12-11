@@ -23,3 +23,5 @@ The command to create VM from exising qcow2 image is as below:
      --import
 
 virsh undefine --nvram "name of VM"
+
+virsh snapshot-delete prod --metadata snap
